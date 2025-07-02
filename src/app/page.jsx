@@ -125,15 +125,15 @@ export default function HomePage() {
               <div className="trust-indicators">
                 <span className="trust-item">
                   <span className="trust-icon">👥</span>
-                  <span className="trust-text">100% 익명</span>
+                  <span className="trust-text">100% 匿名</span>
                 </span>
                 <span className="trust-item">
                   <span className="trust-icon">🏆</span>
-                  <span className="trust-text">전문가 제작</span>
+                  <span className="trust-text">专家制作</span>
                 </span>
                 <span className="trust-item">
                   <span className="trust-icon">⚡</span>
-                  <span className="trust-text">2분 완성</span>
+                  <span className="trust-text">2分钟完成</span>
                 </span>
               </div>
             </div>
@@ -146,10 +146,10 @@ export default function HomePage() {
         <div className="container">
           <div className="features-header">
             <h2 className="features-title">
-              왜 시니어 MBTI를 선택해야 할까요?
+              为什么选择银发族MBTI？
             </h2>
             <p className="features-subtitle">
-              당신의 풍부한 인생 경험을 바탕으로 한 정확한 성격 분석
+              基于您丰富人生阅历的精准性格分析
             </p>
           </div>
 
@@ -309,7 +309,7 @@ export default function HomePage() {
 
         .language-selector-wrapper {
           position: relative;
-          z-index: 10;
+          z-index: 999999;
           display: flex;
           justify-content: flex-end;
           padding: 24px 0;
