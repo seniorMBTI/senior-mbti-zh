@@ -1,0 +1,60 @@
+# 机器人.txt - 银发族MBTI中文版
+
+User-agent: *
+Allow: /
+
+# 站点地图位置
+Sitemap: https://k71r0f94e.vercel.app/sitemap.xml
+
+# 重要页面优先爬取指定
+Allow: /
+Allow: /survey
+Allow: /result/*
+
+# 限制爬取的文件/目录
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /temp/
+Disallow: /private/
+
+# 搜索引擎专用优化设置
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# 爬取频率控制
+# 热门页面频繁爬取
+Allow: /result/intj
+Allow: /result/enfp
+Allow: /result/infj
+Allow: /result/entp
+
+# 排除元数据文件
+Disallow: *.json$
+Disallow: *.xml$
+Disallow: *.log$
+Disallow: *.tmp$
+
+# 排除缓存和构建文件
+Disallow: /node_modules/
+Disallow: /.next/
+Disallow: /build/
+Disallow: /dist/
+
+# Vercel专用文件排除
+Disallow: /vercel.json
+Disallow: /.vercel/
