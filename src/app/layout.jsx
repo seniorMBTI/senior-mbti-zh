@@ -25,7 +25,7 @@ export const metadata = {
     siteName: '银发族MBTI - 中老年性格测试',
     images: [
       {
-        url: '/images/senior-mbti-og-zh.jpg',
+        url: 'https://senior-mbti-zh.vercel.app/og-landing.png',
         width: 1200,
         height: 630,
         alt: '银发族MBTI - 中老年人专属MBTI性格测试'
@@ -36,7 +36,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: '银发族MBTI - 中老年性格测试',
     description: '专为银发族设计的MBTI测试。50岁、60岁、70岁以上人群的性格分析与相性诊断。',
-    images: ['/images/senior-mbti-og-zh.jpg'],
+    images: ['https://senior-mbti-zh.vercel.app/og-landing.png'],
     creator: '@seniormbticn'
   },
   alternates: {

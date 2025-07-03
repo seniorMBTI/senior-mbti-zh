@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function ResultPage() {
   const params = useParams();
@@ -10,19 +10,81 @@ export default function ResultPage() {
   const [resultData, setResultData] = useState(null);
   const [showShareDialog, setShowShareDialog] = useState(false);
   const [showCopySuccess, setShowCopySuccess] = useState(false);
+  const shareButtonRef = useRef(null);
+  const [modalPosition, setModalPosition] = useState({ top: '50%', left: '50%' });
 
   useEffect(() => {
     setMounted(true);
     
-    // localStorage에서 결과 데이터 로드
+    // localStorage에서 결과 데이터 로드 또는 URL 파라미터에서 로드
     const resultId = params.id;
     if (resultId && typeof window !== 'undefined') {
+      // 먼저 localStorage에서 시도
       const storedData = localStorage.getItem(`mbti-result-${resultId}`);
       if (storedData) {
         setResultData(JSON.parse(storedData));
+      } else {
+        // localStorage에 없으면 URL 파라미터 확인 (공유 링크)
+        const urlParams = new URLSearchParams(window.location.search);
+        const mbtiType = urlParams.get('type');
+        const isShared = urlParams.get('shared');
+        
+        if (mbtiType && isShared) {
+          // URL에서 MBTI 타입을 가져와서 결과 데이터 생성
+          const mockResultData = {
+            mbtiType: mbtiType,
+            timestamp: Date.now(),
+            isSharedLink: true
+          };
+          setResultData(mockResultData);
+        }
       }
     }
   }, [params.id]);
+
+  // MBTI 结果动态更新元标签
+  useEffect(() => {
+    if (resultData && mounted) {
+      const mbtiType = resultData.mbtiType;
+      const mbtiInfo = mbtiTypes[mbtiType];
+      
+      if (mbtiInfo) {
+        // 更新页面标题
+        document.title = `${mbtiType} ${mbtiInfo.name} - 银发族MBTI结果`;
+        
+        // 更新Open Graph元标签
+        const updateMetaTag = (property, content) => {
+          let meta = document.querySelector(`meta[property="${property}"]`);
+          if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute('property', property);
+            document.head.appendChild(meta);
+          }
+          meta.setAttribute('content', content);
+        };
+
+        const updateNameMetaTag = (name, content) => {
+          let meta = document.querySelector(`meta[name="${name}"]`);
+          if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute('name', name);
+            document.head.appendChild(meta);
+          }
+          meta.setAttribute('content', content);
+        };
+
+        // 更新元标签
+        updateMetaTag('og:title', `${mbtiType} ${mbtiInfo.name} - 银发族MBTI结果`);
+        updateMetaTag('og:description', `您的MBTI是${mbtiType} ${mbtiInfo.name}。${mbtiInfo.subtitle} ${mbtiInfo.description.substring(0, 100)}...`);
+        updateMetaTag('og:image', `https://senior-mbti-zh.vercel.app/og-result.png`);
+        
+        updateNameMetaTag('description', `您的MBTI是${mbtiType} ${mbtiInfo.name}。${mbtiInfo.subtitle} ${mbtiInfo.description.substring(0, 100)}...`);
+        updateNameMetaTag('twitter:title', `${mbtiType} ${mbtiInfo.name} - 银发族MBTI结果`);
+        updateNameMetaTag('twitter:description', `您的MBTI是${mbtiType} ${mbtiInfo.name}。${mbtiInfo.subtitle}`);
+        updateNameMetaTag('twitter:image', `https://senior-mbti-zh.vercel.app/og-result.png`);
+      }
+    }
+  }, [resultData, mounted]);
 
   // MBTI 유형별 상성 정보
   const mbtiCompatibility = {
@@ -332,9 +394,47 @@ export default function ResultPage() {
     }
   };
 
+  const handleShareClick = () => {
+    if (shareButtonRef.current) {
+      const rect = shareButtonRef.current.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      
+      // 모바일에서도 버튼 중심으로 표시하되, 화면 경계 고려
+      let top = rect.top + scrollTop + rect.height / 2;
+      let left = rect.left + scrollLeft + rect.width / 2;
+      
+      // 모바일 화면에서 경계를 벗어나지 않도록 조정
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
+        const modalWidth = Math.min(400, window.innerWidth - 40);
+        const modalHeight = 200; // 대략적인 모달 높이
+        
+        // 좌우 경계 체크
+        if (left - modalWidth / 2 < 20) {
+          left = modalWidth / 2 + 20;
+        } else if (left + modalWidth / 2 > window.innerWidth - 20) {
+          left = window.innerWidth - modalWidth / 2 - 20;
+        }
+        
+        // 상하 경계 체크
+        if (top - modalHeight / 2 < 20) {
+          top = modalHeight / 2 + 20;
+        } else if (top + modalHeight / 2 > window.innerHeight + scrollTop - 20) {
+          top = window.innerHeight + scrollTop - modalHeight / 2 - 20;
+        }
+      }
+      
+      setModalPosition({ top, left });
+    }
+    setShowShareDialog(true);
+  };
+
   const copyResultLink = () => {
-    if (mounted && typeof window !== 'undefined') {
-      navigator.clipboard.writeText(window.location.href);
+    if (mounted && typeof window !== 'undefined' && resultData) {
+      // URL에 MBTI 정보를 쿼리 파라미터로 추가하여 공유
+      const shareUrl = `${window.location.origin}${window.location.pathname}?type=${resultData.mbtiType}&shared=true`;
+      navigator.clipboard.writeText(shareUrl);
       setShowCopySuccess(true);
       setTimeout(() => {
         setShowCopySuccess(false);
@@ -399,8 +499,9 @@ export default function ResultPage() {
           
           <div className="action-buttons">
             <button 
+              ref={shareButtonRef}
               className="share-button"
-              onClick={() => setShowShareDialog(true)}
+              onClick={handleShareClick}
             >
               <span>🔗</span> 分享结果
             </button>
@@ -512,8 +613,8 @@ export default function ResultPage() {
 
           <div className="compatibility-card challenging-match">
             <div className="compatibility-header">
-              <h3>💛 需要磨合</h3>
-              <p>需要更多理解和包容的类型</p>
+              <h3>💔 最差配对</h3>
+              <p>需要大量努力和理解才能维持和谐的类型</p>
             </div>
             <div className="compatibility-types">
               {mbtiCompatibility[resultData.mbtiType]?.challengingMatch.map((type, index) => (
@@ -569,7 +670,18 @@ export default function ResultPage() {
       {/* 공유 모달 */}
       {showShareDialog && (
         <div className="modal-overlay" onClick={() => setShowShareDialog(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div 
+            className="modal-content" 
+            style={{
+              position: 'absolute',
+              top: modalPosition.top,
+              left: modalPosition.left,
+              transform: 'translate(-50%, -50%)',
+              maxWidth: '90vw',
+              maxHeight: '90vh'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="modal-header">
               <h3>分享结果</h3>
               <button 

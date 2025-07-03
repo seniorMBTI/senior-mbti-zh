@@ -291,6 +291,13 @@ const translations = {
     'compatibility.effort': 'Effort Required',
     'compatibility.cta': 'Check My MBTI Compatibility',
     
+    // Sample Questions Section
+    'landing.questions.title': '样题预览',
+    'landing.questions.example': '问题示例',
+    'landing.questions.sample': '在规划退休后的活动时，您更偏向哪种方式？',
+    'landing.questions.choice1': '系统性规划，提前做好准备',
+    'landing.questions.choice2': '根据具体情况灵活决定',
+    
     // MBTI Types
     'mbti.intj.name': 'Strategist',
     'mbti.intj.desc': 'Systematic thinking and independent living',

@@ -332,46 +332,46 @@ export default function HomePage() {
       <section className="seo-content-section">
         <div className="container">
           <div className="seo-content">
-            <h2 className="seo-content-title">시니어 MBTI 성격 유형 테스트 완벽 가이드</h2>
+            <h2 className="seo-content-title">老年人MBTI性格类型测试完整指南</h2>
             
             <div className="content-grid">
               <div className="content-block">
-                <h3>💎 시니어 MBTI란 무엇인가요?</h3>
-                <p>시니어 MBTI는 60대 이상 중장년층의 독특한 인생 경험과 가치관을 반영하여 특별히 개발된 성격 유형 테스트입니다. 일반적인 MBTI와 달리 은퇴 후 인생, 건강 관리, 가족 관계, 사회적 역할 변화 등 시니어가 마주하는 특별한 상황들을 고려한 심리 분석을 제공합니다.</p>
+                <h3>💎 什么是老年人MBTI？</h3>
+                <p>老年人MBTI是专为60岁以上中老年人的独特人生经历和价值观而特别开发的性格类型测试。与一般MBTI不同，它考虑到退休后的生活、健康管理、家庭关系、社会角色变化等老年人面临的特殊情况，提供心理分析。</p>
               </div>
               
               <div className="content-block">
-                <h3>🎯 은퇴 후 인생 설계의 새로운 출발점</h3>
-                <p>은퇴는 인생의 끝이 아닌 새로운 시작입니다. 시니어 MBTI를 통해 내 성격 유형을 정확히 파악하고, 황금기 인생을 더욱 풍요롭게 만들 수 있는 활동, 취미, 인간관계를 발견하세요. 중장년층을 위한 맞춤형 라이프스타일 가이드를 제공합니다.</p>
+                <h3>🎯 退休后人生规划的新起点</h3>
+                <p>退休不是人生的终点，而是新的开始。通过老年人MBTI准确了解自己的性格类型，发现能让黄金时期生活更加丰富的活动、爱好和人际关系。为中老年人提供定制化的生活方式指南。</p>
               </div>
               
               <div className="content-block">
-                <h3>💕 시니어 상성 분석의 과학적 근거</h3>
-                <p>60년 이상의 인생 경험을 바탕으로 한 성격 분석은 더욱 정확하고 깊이 있습니다. 시니어 MBTI는 나와 가장 잘 맞는 동반자, 친구, 활동 파트너를 찾는 데 도움을 줍니다. 과학적으로 검증된 심리학 이론을 바탕으로 신뢰할 수 있는 상성 분석을 제공합니다.</p>
+                <h3>💕 老年人相性分析的科学依据</h3>
+                <p>基于60年以上人生经验的性格分析更加准确和深入。老年人MBTI帮助您找到最适合的伴侣、朋友和活动伙伴。基于科学验证的心理学理论，提供可靠的相性分析。</p>
               </div>
             </div>
             
             <div className="faq-section">
-              <h3 className="faq-title">자주 묻는 질문 (FAQ)</h3>
+              <h3 className="faq-title">常见问题 (FAQ)</h3>
               <div className="faq-list">
                 <div className="faq-item">
-                  <h4 className="faq-question">Q: 시니어 MBTI 테스트는 정말 무료인가요?</h4>
-                  <p className="faq-answer">A: 네, 완전 무료입니다. 회원가입이나 결제 없이 바로 테스트를 받으실 수 있으며, 결과 분석과 상성 정보도 모두 무료로 제공됩니다.</p>
+                  <h4 className="faq-question">Q: 老年人MBTI测试真的免费吗？</h4>
+                  <p className="faq-answer">A: 是的，完全免费。您可以无需注册或付费，直接参加测试，结果分析和相性信息都是免费提供的。</p>
                 </div>
                 
                 <div className="faq-item">
-                  <h4 className="faq-question">Q: 일반 MBTI와 시니어 MBTI의 차이점은 무엇인가요?</h4>
-                  <p className="faq-answer">A: 시니어 MBTI는 60대+ 중장년층의 특별한 인생 단계를 고려합니다. 은퇴, 건강 관리, 가족 관계 변화 등 시니어만의 상황을 반영한 질문과 해석을 제공합니다.</p>
+                  <h4 className="faq-question">Q: 一般MBTI与老年人MBTI的区别是什么？</h4>
+                  <p className="faq-answer">A: 老年人MBTI专门考虥60岁以上中老年人的特殊人生阶段。它反映了退休、健康管理、家庭关系变化等老年人特有情况的问题和解释。</p>
                 </div>
                 
                 <div className="faq-item">
-                  <h4 className="faq-question">Q: 테스트 시간은 얼마나 걸리나요?</h4>
-                  <p className="faq-answer">A: 약 5분 정도 소요됩니다. 24개의 간단한 질문으로 구성되어 있어 부담 없이 완료하실 수 있습니다.</p>
+                  <h4 className="faq-question">Q: 测试需要多长时间？</h4>
+                  <p className="faq-answer">A: 大约5分钟左右。由24个简单问题组成，您可以轻松完成。</p>
                 </div>
                 
                 <div className="faq-item">
-                  <h4 className="faq-question">Q: 결과는 얼마나 정확한가요?</h4>
-                  <p className="faq-answer">A: 심리학 전문가와 시니어 라이프 전문가가 공동 개발한 검증된 테스트입니다. 수천 명의 시니어 테스터를 통해 신뢰성을 확인했습니다.</p>
+                  <h4 className="faq-question">Q: 结果有多准确？</h4>
+                  <p className="faq-answer">A: 这是由心理学专家和老年生活专家共同开发的经过验证的测试。通过数千名老年测试者验证了其可靠性。</p>
                 </div>
               </div>
             </div>
@@ -384,133 +384,133 @@ export default function HomePage() {
         <div className="container">
           <div className="internal-links-header">
             <h2 className="internal-links-title">
-              🔍 16가지 MBTI 성격 유형 탐색하기
+              🔍 探索六种MBTI性格类型
             </h2>
             <p className="internal-links-subtitle">
-              나와 비슷한 성격의 시니어들은 어떤 특징을 가지고 있을까요?
+              与您相似性格的老年人有什么特点呢？
             </p>
           </div>
           
           <div className="mbti-grid">
             <div className="mbti-category analyst">
-              <h3 className="category-title">💼 분석가 그룹 (NT)</h3>
+              <h3 className="category-title">💼 分析家群体 (NT)</h3>
               <div className="mbti-types">
                 <a href="/result/intj" className="mbti-link intj">
                   <span className="mbti-code">INTJ</span>
-                  <span className="mbti-name">전략가</span>
-                  <span className="mbti-desc">체계적 사고와 독립적 생활</span>
+                  <span className="mbti-name">战略家</span>
+                  <span className="mbti-desc">系统性思维和独立生活</span>
                 </a>
                 <a href="/result/intp" className="mbti-link intp">
                   <span className="mbti-code">INTP</span>
-                  <span className="mbti-name">사색가</span>
-                  <span className="mbti-desc">분석적 사고와 지적 호기심</span>
+                  <span className="mbti-name">思考者</span>
+                  <span className="mbti-desc">分析性思维和智力好奇心</span>
                 </a>
                 <a href="/result/entj" className="mbti-link entj">
                   <span className="mbti-code">ENTJ</span>
-                  <span className="mbti-name">통솔자</span>
-                  <span className="mbti-desc">리더십과 도전 정신</span>
+                  <span className="mbti-name">统率者</span>
+                  <span className="mbti-desc">领导力和挑战精神</span>
                 </a>
                 <a href="/result/entp" className="mbti-link entp">
                   <span className="mbti-code">ENTP</span>
-                  <span className="mbti-name">발명가</span>
-                  <span className="mbti-desc">창의적 사고와 새로운 도전</span>
+                  <span className="mbti-name">发明家</span>
+                  <span className="mbti-desc">创意思维和新挑战</span>
                 </a>
               </div>
             </div>
             
             <div className="mbti-category diplomat">
-              <h3 className="category-title">🌈 외교관 그룹 (NF)</h3>
+              <h3 className="category-title">🌈 外交家群体 (NF)</h3>
               <div className="mbti-types">
                 <a href="/result/infj" className="mbti-link infj">
                   <span className="mbti-code">INFJ</span>
-                  <span className="mbti-name">옵호자</span>
-                  <span className="mbti-desc">깊은 통찰력과 의미 있는 관계</span>
+                  <span className="mbti-name">倡导者</span>
+                  <span className="mbti-desc">深刻的洞察力和有意义的关系</span>
                 </a>
                 <a href="/result/infp" className="mbti-link infp">
                   <span className="mbti-code">INFP</span>
-                  <span className="mbti-name">중재자</span>
-                  <span className="mbti-desc">가치관에 충실하고 자유로운 영혼</span>
+                  <span className="mbti-name">中介者</span>
+                  <span className="mbti-desc">对价值观忠实和自由的灵魂</span>
                 </a>
                 <a href="/result/enfj" className="mbti-link enfj">
                   <span className="mbti-code">ENFJ</span>
-                  <span className="mbti-name">선도자</span>
-                  <span className="mbti-desc">타인에 대한 배려와 사회 기여</span>
+                  <span className="mbti-name">先导者</span>
+                  <span className="mbti-desc">对他人的关心和社会贡献</span>
                 </a>
                 <a href="/result/enfp" className="mbti-link enfp">
                   <span className="mbti-code">ENFP</span>
-                  <span className="mbti-name">활동가</span>
-                  <span className="mbti-desc">열정적이고 긍정적인 에너지</span>
+                  <span className="mbti-name">活动家</span>
+                  <span className="mbti-desc">热情和积极的能量</span>
                 </a>
               </div>
             </div>
             
             <div className="mbti-category sentinel">
-              <h3 className="category-title">🛡️ 관리자 그룹 (SJ)</h3>
+              <h3 className="category-title">🛡️ 管理者群体 (SJ)</h3>
               <div className="mbti-types">
                 <a href="/result/istj" className="mbti-link istj">
                   <span className="mbti-code">ISTJ</span>
-                  <span className="mbti-name">관리자</span>
-                  <span className="mbti-desc">책임감과 체계적인 생활</span>
+                  <span className="mbti-name">管理者</span>
+                  <span className="mbti-desc">责任感和系统性生活</span>
                 </a>
                 <a href="/result/isfj" className="mbti-link isfj">
                   <span className="mbti-code">ISFJ</span>
-                  <span className="mbti-name">수호자</span>
-                  <span className="mbti-desc">헌신적이고 따뜻한 돌봄</span>
+                  <span className="mbti-name">守护者</span>
+                  <span className="mbti-desc">奉献和温暖的关怀</span>
                 </a>
                 <a href="/result/estj" className="mbti-link estj">
                   <span className="mbti-code">ESTJ</span>
-                  <span className="mbti-name">감독관</span>
-                  <span className="mbti-desc">효율성과 조직력 발휘</span>
+                  <span className="mbti-name">督导者</span>
+                  <span className="mbti-desc">高效和组织能力</span>
                 </a>
                 <a href="/result/esfj" className="mbti-link esfj">
                   <span className="mbti-code">ESFJ</span>
-                  <span className="mbti-name">집정관</span>
-                  <span className="mbti-desc">따뜻한 사교성과 돌봄</span>
+                  <span className="mbti-name">执政官</span>
+                  <span className="mbti-desc">温暖的社交和关怀</span>
                 </a>
               </div>
             </div>
             
             <div className="mbti-category explorer">
-              <h3 className="category-title">🎭 탐험가 그룹 (SP)</h3>
+              <h3 className="category-title">🎭 探险家群体 (SP)</h3>
               <div className="mbti-types">
                 <a href="/result/istp" className="mbti-link istp">
                   <span className="mbti-code">ISTP</span>
-                  <span className="mbti-name">장인</span>
-                  <span className="mbti-desc">실용적이고 논리적인 접근</span>
+                  <span className="mbti-name">工匠</span>
+                  <span className="mbti-desc">实用和逻辑性方法</span>
                 </a>
                 <a href="/result/isfp" className="mbti-link isfp">
                   <span className="mbti-code">ISFP</span>
-                  <span className="mbti-name">모험가</span>
-                  <span className="mbti-desc">예술적 감각과 자유로운 영혼</span>
+                  <span className="mbti-name">冒险家</span>
+                  <span className="mbti-desc">艺术感和自由的灵魂</span>
                 </a>
                 <a href="/result/estp" className="mbti-link estp">
                   <span className="mbti-code">ESTP</span>
-                  <span className="mbti-name">사업가</span>
-                  <span className="mbti-desc">현재를 즐기고 활동적인 삶</span>
+                  <span className="mbti-name">企业家</span>
+                  <span className="mbti-desc">享受当下和积极的生活</span>
                 </a>
                 <a href="/result/esfp" className="mbti-link esfp">
                   <span className="mbti-code">ESFP</span>
-                  <span className="mbti-name">연예인</span>
-                  <span className="mbti-desc">즐거움과 사교 활동을 즐기는</span>
+                  <span className="mbti-name">表演者</span>
+                  <span className="mbti-desc">享受快乐和社交活动</span>
                 </a>
               </div>
             </div>
           </div>
           
           <div className="related-links">
-            <h3 className="related-title">시니어 라이프 관련 정보</h3>
+            <h3 className="related-title">老年生活相关信息</h3>
             <div className="related-grid">
               <a href="/mbti-compatibility" className="related-link">
                 <span className="related-icon">💕</span>
-                <span className="related-text">MBTI 상성 분석 가이드</span>
+                <span className="related-text">MBTI相性分析指南</span>
               </a>
               <a href="/senior-lifestyle" className="related-link">
                 <span className="related-icon">🌿</span>
-                <span className="related-text">시니어 라이프스타일 팁</span>
+                <span className="related-text">老年生活方式提示</span>
               </a>
               <a href="/retirement-planning" className="related-link">
                 <span className="related-icon">🏡</span>
-                <span className="related-text">은퇴 후 인생 설계</span>
+                <span className="related-text">退休后人生规划</span>
               </a>
             </div>
           </div>
@@ -522,10 +522,10 @@ export default function HomePage() {
         <div className="container">
           <div className="final-cta-content">
             <h2 className="final-cta-title">
-              지금 바로 시작하세요! 나만의 시니어 MBTI 여정
+              现在就开始！您的老年MBTI之旅
             </h2>
             <p className="final-cta-description">
-              60대+ 황금기 인생을 더욱 풍요롭게 만들어줄 성격 분석을 무료로 받아보세요
+              免费获取能让您60岁以上黄金年华更加丰富的性格分析
             </p>
             <button
               onClick={handleStartTest}
@@ -534,14 +534,14 @@ export default function HomePage() {
             >
               <span className="final-cta-icon">✨</span>
               <span className="final-cta-text">
-                {isStarting ? '테스트 시작 중...' : '무료 시니어 MBTI 테스트 시작하기'}
+                {isStarting ? '测试开始中...' : '开始免费老年MBTI测试'}
               </span>
             </button>
             <div className="final-guarantees">
-              <span className="guarantee-item">✅ 완전 무료</span>
-              <span className="guarantee-item">✅ 2분 완성</span>
-              <span className="guarantee-item">✅ 즉시 결과</span>
-              <span className="guarantee-item">✅ 개인정보 보호</span>
+              <span className="guarantee-item">✅ 完全免费</span>
+              <span className="guarantee-item">✅ 2分钟完成</span>
+              <span className="guarantee-item">✅ 即时结果</span>
+              <span className="guarantee-item">✅ 隐私保护</span>
             </div>
           </div>
         </div>
