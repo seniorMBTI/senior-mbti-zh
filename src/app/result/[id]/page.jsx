@@ -796,6 +796,137 @@ export default function ResultPage() {
           margin: 0;
         }
 
+        /* Compatibility and Senior Advice Sections */
+        .compatibility-section, .senior-advice-section {
+          background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+          padding: 60px 24px;
+          margin: 40px 0;
+        }
+
+        .section-header {
+          text-align: center;
+          margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+          font-size: 32px;
+          font-weight: 800;
+          color: #1e293b;
+          margin-bottom: 8px;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .section-header p {
+          font-size: 18px;
+          color: #64748b;
+          margin: 0;
+          font-weight: 500;
+        }
+
+        .compatibility-grid, .advice-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 32px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .compatibility-card, .advice-card {
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(20px);
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s ease;
+        }
+
+        .compatibility-card:hover, .advice-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .compatibility-header, .advice-header {
+          text-align: center;
+          margin-bottom: 24px;
+        }
+
+        .compatibility-header h3, .advice-header h3 {
+          font-size: 20px;
+          font-weight: 700;
+          color: #1e293b;
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        }
+
+        .compatibility-header p, .advice-header p {
+          font-size: 14px;
+          color: #64748b;
+          margin: 0;
+        }
+
+        .compatibility-types {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: center;
+        }
+
+        .compatibility-type {
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-size: 14px;
+          font-weight: 700;
+          color: white;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .compatibility-type.best {
+          background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .compatibility-type.good {
+          background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .compatibility-type.challenging {
+          background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .advice-content {
+          space-y: 16px;
+        }
+
+        .advice-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          margin-bottom: 16px;
+          font-size: 16px;
+          line-height: 1.6;
+          color: #374151;
+        }
+
+        .advice-bullet {
+          font-size: 18px;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        .lifestyle-card {
+          border-left: 4px solid #f59e0b;
+        }
+
+        .health-card {
+          border-left: 4px solid #059669;
+        }
+
         .modal-overlay {
           position: fixed;
           inset: 0;

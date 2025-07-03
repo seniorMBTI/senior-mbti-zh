@@ -163,16 +163,16 @@ export default function HomePage() {
               银发族MBTI为中老年人特别的原因
             </h2>
             <p className="features-subtitle">
-              60대+ 은퇴 후 인생을 위한 전문적인 성격 분석과 라이프스타일 가이드
+              专为60岁以上退休后的人生设计的专业性格分析和生活方式指南
             </p>
             <div className="seo-benefits">
-              <h3 className="seo-benefits-title">시니어 맞춤 MBTI 테스트의 특별한 장점</h3>
+              <h3 className="seo-benefits-title">银发族专属MBTI测试的特别优势</h3>
               <ul className="benefits-list">
-                <li>✅ <strong>중장년 심리 전문가</strong>가 설계한 시니어 특화 질문</li>
-                <li>✅ <strong>은퇴 후 인생 설계</strong>를 위한 맞춤형 조언 제공</li>
-                <li>✅ <strong>60대+ 인간관계</strong> 개선을 위한 상성 분석</li>
-                <li>✅ <strong>황금기 라이프스타일</strong>에 최적화된 성격 해석</li>
-                <li>✅ <strong>시니어 건강 관리</strong>와 연계된 생활 가이드</li>
+                <li>✅ <strong>中老年心理专家</strong>设计的银发族专项问题</li>
+                <li>✅ <strong>退休后人生规划</strong>的个性化建议提供</li>
+                <li>✅ <strong>60岁以上人际关系</strong>改善的相性分析</li>
+                <li>✅ <strong>黄金年华生活方式</strong>优化的性格解读</li>
+                <li>✅ <strong>银发族健康管理</strong>相关的生活指南</li>
               </ul>
             </div>
           </div>
@@ -202,79 +202,79 @@ export default function HomePage() {
         <div className="container">
           <div className="showcase-header">
             <h2 className="showcase-title">
-              💕 MBTI 상성 분석 미리보기
+              💕 MBTI相性分析预览
             </h2>
             <p className="showcase-subtitle">
-              당신과 최고의 궁합인 MBTI와 상극인 MBTI를 미리 확인해보세요
+              提前确认与您最佳匹配和相冲的MBTI类型
             </p>
           </div>
 
           <div className="compatibility-examples">
             <div className="example-card best-match-example">
               <div className="example-header">
-                <h3 className="example-title">💖 최고의 궁합 예시</h3>
-                <p className="example-subtitle">INTJ × ENFP 조합</p>
+                <h3 className="example-title">💖 最佳匹配示例</h3>
+                <p className="example-subtitle">INTJ × ENFP 组合</p>
               </div>
               <div className="mbti-cards">
                 <div className="mbti-card intj-card">
                   <div className="mbti-type">INTJ</div>
-                  <div className="mbti-name">전략가</div>
+                  <div className="mbti-name">策略家</div>
                   <div className="mbti-traits">
-                    <span className="trait">체계적 사고</span>
-                    <span className="trait">독립적</span>
-                    <span className="trait">장기 계획</span>
+                    <span className="trait">系统思维</span>
+                    <span className="trait">独立性强</span>
+                    <span className="trait">长期规划</span>
                   </div>
                 </div>
                 <div className="compatibility-indicator">
                   <div className="heart-icon">💖</div>
-                  <div className="compatibility-text">완벽한 조화</div>
+                  <div className="compatibility-text">完美和谐</div>
                 </div>
                 <div className="mbti-card enfp-card">
                   <div className="mbti-type">ENFP</div>
-                  <div className="mbti-name">활동가</div>
+                  <div className="mbti-name">活动家</div>
                   <div className="mbti-traits">
-                    <span className="trait">열정적</span>
-                    <span className="trait">창의적</span>
-                    <span className="trait">사교적</span>
+                    <span className="trait">热情洋溢</span>
+                    <span className="trait">富有创意</span>
+                    <span className="trait">善于社交</span>
                   </div>
                 </div>
               </div>
               <div className="compatibility-reason">
-                <p>체계적인 INTJ와 창의적인 ENFP는 서로의 장점을 보완하며 깊은 이해를 바탕으로 한 관계를 형성합니다.</p>
+                <p>系统化的INTJ和创意型的ENFP相互补充优势，基于深度理解形成关系。</p>
               </div>
             </div>
 
             <div className="example-card challenging-match-example">
               <div className="example-header">
-                <h3 className="example-title">💛 이해가 필요한 예시</h3>
-                <p className="example-subtitle">INTJ × ESFJ 조합</p>
+                <h3 className="example-title">💛 需要理解的示例</h3>
+                <p className="example-subtitle">INTJ × ESFJ 组合</p>
               </div>
               <div className="mbti-cards">
                 <div className="mbti-card intj-card">
                   <div className="mbti-type">INTJ</div>
-                  <div className="mbti-name">전략가</div>
+                  <div className="mbti-name">策略家</div>
                   <div className="mbti-traits">
-                    <span className="trait">논리적</span>
-                    <span className="trait">독립적</span>
-                    <span className="trait">계획적</span>
+                    <span className="trait">逻辑思维</span>
+                    <span className="trait">独立性强</span>
+                    <span className="trait">计划性强</span>
                   </div>
                 </div>
                 <div className="compatibility-indicator challenging">
                   <div className="heart-icon">💛</div>
-                  <div className="compatibility-text">노력 필요</div>
+                  <div className="compatibility-text">需要努力</div>
                 </div>
                 <div className="mbti-card esfj-card">
                   <div className="mbti-type">ESFJ</div>
-                  <div className="mbti-name">집정관</div>
+                  <div className="mbti-name">执政官</div>
                   <div className="mbti-traits">
-                    <span className="trait">배려심</span>
-                    <span className="trait">사교적</span>
-                    <span className="trait">협력적</span>
+                    <span className="trait">体贴关怀</span>
+                    <span className="trait">善于社交</span>
+                    <span className="trait">合作精神</span>
                   </div>
                 </div>
               </div>
               <div className="compatibility-reason">
-                <p>서로 다른 접근 방식을 가지지만, 상호 이해와 배려를 통해 균형 잡힌 관계를 만들어갈 수 있습니다.</p>
+                <p>虽然有着不同的处事方式，但通过相互理解和关怀可以建立平衡的关系。</p>
               </div>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function HomePage() {
               className="showcase-cta-button"
             >
               <span>🎯</span>
-              내 MBTI와 상성 확인하기
+              确认我的MBTI与相性
             </button>
           </div>
         </div>
