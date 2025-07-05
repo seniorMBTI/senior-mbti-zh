@@ -302,7 +302,10 @@ export default function SurveyPage() {
     setIsSubmitting(true);
     
     try {
-      // 计算MBTI类型
+      // 状态更新延迟
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
+      // MBTI计算逻辑
       const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
       
       finalAnswers.forEach(answer => {
@@ -315,28 +318,33 @@ export default function SurveyPage() {
         (scores.T > scores.F ? 'T' : 'F') +
         (scores.J > scores.P ? 'J' : 'P');
 
-      // 生成结果ID
-      const resultId = Date.now().toString();
+      // MBTI类型验证
+      const validTypes = ['INTJ', 'INTP', 'ENTJ', 'ENTP', 'INFJ', 'INFP', 'ENFJ', 'ENFP', 
+                         'ISTJ', 'ISFJ', 'ESTJ', 'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP'];
       
-      // 保存到localStorage
-      const resultData = {
-        mbtiType,
-        scores,
-        answers: finalAnswers,
-        completedAt: new Date().toISOString(),
-        language: 'zh'
-      };
-      
-      localStorage.setItem(`mbti-result-${resultId}`, JSON.stringify(resultData));
-      
-      // 2秒后自动跳转到结果页面
-      setTimeout(() => {
-        router.push(`/result/${resultId}`);
-      }, 2000);
-      
+      if (validTypes.includes(mbtiType)) {
+        // 保存到localStorage（可选）
+        const resultData = {
+          mbtiType,
+          scores,
+          answers: finalAnswers,
+          completedAt: new Date().toISOString(),
+          language: 'zh'
+        };
+        
+        localStorage.setItem(`mbti-result-${Date.now()}`, JSON.stringify(resultData));
+        
+        // 导航延迟
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        // 使用replace避免返回问题
+        router.replace(`/result/${mbtiType.toLowerCase()}`);
+      } else {
+        throw new Error(`Invalid MBTI type calculated: ${mbtiType}`);
+      }
     } catch (error) {
       console.error('Error calculating results:', error);
-      alert('结果计算出现错误，请重试。');
+      alert('结果计算出错，请重试。');
       setIsSubmitting(false);
     }
   };
