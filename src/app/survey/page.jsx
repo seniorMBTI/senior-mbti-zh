@@ -332,7 +332,7 @@ export default function SurveyPage() {
           language: 'zh'
         };
         
-        localStorage.setItem(`mbti-result-${Date.now()}`, JSON.stringify(resultData));
+        localStorage.setItem(`mbti-result-${mbtiType}`, JSON.stringify(resultData));
         
         // 导航延迟
         await new Promise(resolve => setTimeout(resolve, 200));
