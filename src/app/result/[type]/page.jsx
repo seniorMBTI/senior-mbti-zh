@@ -610,7 +610,7 @@ export default function ResultPage() {
               <p>相互补充并激发最佳潜力</p>
             </div>
             <div className="match-types">
-              {mbtiCompatibility[resultData.mbtiType]?.bestMatch.map((type, index) => (
+              {resultData?.mbtiType && mbtiCompatibility[resultData.mbtiType]?.bestMatch.map((type, index) => (
                 <span key={index} className="type-badge-small best">{type}</span>
               ))}
             </div>
@@ -622,7 +622,7 @@ export default function ResultPage() {
               <p>理解且支持彼此的成长</p>
             </div>
             <div className="match-types">
-              {mbtiCompatibility[resultData.mbtiType]?.goodMatch.map((type, index) => (
+              {resultData?.mbtiType && mbtiCompatibility[resultData.mbtiType]?.goodMatch.map((type, index) => (
                 <span key={index} className="type-badge-small good">{type}</span>
               ))}
             </div>
@@ -634,7 +634,7 @@ export default function ResultPage() {
               <p>需要努力和理解的关系</p>
             </div>
             <div className="match-types">
-              {mbtiCompatibility[resultData.mbtiType]?.challengingMatch.map((type, index) => (
+              {resultData?.mbtiType && mbtiCompatibility[resultData.mbtiType]?.challengingMatch.map((type, index) => (
                 <span key={index} className="type-badge-small challenging">{type}</span>
               ))}
             </div>
