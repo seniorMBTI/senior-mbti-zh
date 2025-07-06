@@ -353,11 +353,18 @@ export default function SurveyPage() {
         
         console.log('About to redirect to:', `/result/${mbtiType.toLowerCase()}`);
         
-        // 更稳定的导航延迟
-        await new Promise(resolve => setTimeout(resolve, 300));
+        // 显示完成消息后自动重定向（2秒）
+        await new Promise(resolve => setTimeout(resolve, 2000));
         
-        // 使用window.location进行更可靠的重定向
-        window.location.href = `/result/${mbtiType.toLowerCase()}`;
+        // 使用 Next.js router 进行可靠重定向
+        router.push(`/result/${mbtiType.toLowerCase()}`);
+        
+        // 备用重定向（如果 router.push 失败）
+        setTimeout(() => {
+          if (typeof window !== 'undefined') {
+            window.location.href = `/result/${mbtiType.toLowerCase()}`;
+          }
+        }, 500);
         
       } else {
         throw new Error(`Invalid MBTI type calculated: ${mbtiType}`);
