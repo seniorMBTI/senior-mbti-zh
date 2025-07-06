@@ -39,7 +39,7 @@ const mbtiDescriptions = {
 };
 
 export async function generateMetadata({ params }) {
-  const resultId = params.id.toUpperCase();
+  const resultId = params.type.toUpperCase();
   const keywords = mbtiKeywords[resultId] || `${resultId}, MBTI结果, 银发族MBTI, 性格类型, MBTI相性, 黄金年华`;
   const description = mbtiDescriptions[resultId] || `${resultId} 性格类型的详细分析结果。了解与您相配和需要磨合的MBTI类型，为您余生寻找理想的人生伴侣。`;
   
@@ -84,7 +84,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default function ResultLayout({ children, params }) {
-  const resultId = params.id.toUpperCase();
+  const resultId = params.type.toUpperCase();
   
   return (
     <>
