@@ -334,42 +334,56 @@ const mbtiTypes = {
 export default function ResultPage() {
   const params = useParams();
   const router = useRouter();
-  const [mounted, setMounted] = useState(false);
   const [resultData, setResultData] = useState(null);
   const [showShareDialog, setShowShareDialog] = useState(false);
   const [showCopySuccess, setShowCopySuccess] = useState(false);
   const shareButtonRef = useRef(null);
   const [modalPosition, setModalPosition] = useState({ top: '50%', left: '50%' });
 
+  // 服务器端兼容的数据处理
   useEffect(() => {
-    setMounted(true);
-    
     // 从URL参数直接获取MBTI类型
     const mbtiType = params.type?.toUpperCase();
     
-    if (mbtiType && typeof window !== 'undefined') {
+    if (mbtiType) {
       // 检查是否为有效的MBTI类型
       const validTypes = ['INTJ', 'INTP', 'ENTJ', 'ENTP', 'INFJ', 'INFP', 'ENFJ', 'ENFP', 
                          'ISTJ', 'ISFJ', 'ESTJ', 'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP'];
       
       if (validTypes.includes(mbtiType)) {
+        // 检查localStorage中的现有结果（仅客户端）
+        let storedResult = null;
+        try {
+          if (typeof window !== 'undefined') {
+            storedResult = localStorage.getItem(`mbti-result-${mbtiType}`);
+            if (storedResult) {
+              storedResult = JSON.parse(storedResult);
+            }
+          }
+        } catch (error) {
+          console.warn('Error reading localStorage:', error);
+        }
+        
         // 从MBTI类型参数生成结果数据
-        const resultData = {
+        setResultData({
           mbtiType: mbtiType,
-          timestamp: Date.now(),
-          isDirectLink: true
-        };
-        setResultData(resultData);
+          timestamp: storedResult?.timestamp || Date.now(),
+          isDirectLink: true,
+          scores: storedResult?.scores || null,
+          answers: storedResult?.answers || null
+        });
       } else {
         // 如果MBTI类型无效则重定向到首页
         router.push('/');
       }
+    } else {
+      router.push('/');
     }
   }, [params.type, router]);
 
-  // MBTI 结果页面动态元标签更新
+  // 客户端元标签更新（服务器端兼容）
   useEffect(() => {
-    if (resultData && mounted) {
+    if (resultData && typeof window !== 'undefined') {
       const mbtiType = resultData.mbtiType;
       const mbtiInfo = mbtiTypes[mbtiType];
       
@@ -377,28 +391,36 @@ export default function ResultPage() {
         // 更新页面标题
         document.title = `${mbtiType} ${mbtiInfo.title} - 银发族MBTI结果`;
         
-        // 更新开放图形元标签
+        // 元标签更新函数
         const updateMetaTag = (property, content) => {
-          let meta = document.querySelector(`meta[property="${property}"]`);
-          if (!meta) {
-            meta = document.createElement('meta');
-            meta.setAttribute('property', property);
-            document.head.appendChild(meta);
+          try {
+            let meta = document.querySelector(`meta[property="${property}"]`);
+            if (!meta) {
+              meta = document.createElement('meta');
+              meta.setAttribute('property', property);
+              document.head.appendChild(meta);
+            }
+            meta.setAttribute('content', content);
+          } catch (error) {
+            console.warn('Meta tag update failed:', error);
           }
-          meta.setAttribute('content', content);
         };
 
         const updateNameMetaTag = (name, content) => {
-          let meta = document.querySelector(`meta[name="${name}"]`);
-          if (!meta) {
-            meta = document.createElement('meta');
-            meta.setAttribute('name', name);
-            document.head.appendChild(meta);
+          try {
+            let meta = document.querySelector(`meta[name="${name}"]`);
+            if (!meta) {
+              meta = document.createElement('meta');
+              meta.setAttribute('name', name);
+              document.head.appendChild(meta);
+            }
+            meta.setAttribute('content', content);
+          } catch (error) {
+            console.warn('Name meta tag update failed:', error);
           }
-          meta.setAttribute('content', content);
         };
 
-        // 使用MBTI类型专用图片更新元标签 (生产域名)
+        // 使用MBTI类型专用内容更新元标签
         updateMetaTag('og:title', `${mbtiType} ${mbtiInfo.title} - 银发族MBTI结果`);
         updateMetaTag('og:description', `您的MBTI是${mbtiType} ${mbtiInfo.title}。${mbtiInfo.subtitle} ${mbtiInfo.description.substring(0, 100)}...`);
         updateMetaTag('og:image', `https://cn.seniormbti.com/${mbtiType}-cn.png`);
@@ -412,7 +434,7 @@ export default function ResultPage() {
         updateNameMetaTag('twitter:card', 'summary_large_image');
       }
     }
-  }, [resultData, mounted]);
+  }, [resultData]);
 
   const handleShareClick = () => {
     if (shareButtonRef.current) {
@@ -451,7 +473,7 @@ export default function ResultPage() {
   };
 
   const copyResultLink = () => {
-    if (mounted && typeof window !== 'undefined' && resultData) {
+    if (typeof window !== 'undefined' && resultData) {
       // 使用简洁的MBTI类型URL进行分享
       const shareUrl = `${window.location.origin}/result/${resultData.mbtiType.toLowerCase()}`;
       navigator.clipboard.writeText(shareUrl);
@@ -463,7 +485,7 @@ export default function ResultPage() {
     }
   };
 
-  if (!mounted || !resultData) {
+  if (!resultData) {
     return (
       <div className="loading-container">
         <div className="loading-spinner"></div>
