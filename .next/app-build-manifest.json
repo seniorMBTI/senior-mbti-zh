@@ -25,20 +25,20 @@
       "static/chunks/377-41b12d4dda16e852.js",
       "static/chunks/app/page-871c985c2fd7d779.js"
     ],
-    "/result/[id]/layout": [
-      "static/chunks/webpack-6e09c1f30d0a9600.js",
-      "static/chunks/fd9d1056-5eb103dce6d79682.js",
-      "static/chunks/69-923e5a5b15a1b460.js",
-      "static/chunks/main-app-7162a0ba2114a8ba.js",
-      "static/chunks/app/result/[id]/layout-cfe6dbd0aea97853.js"
-    ],
-    "/result/[id]/page": [
+    "/result/[type]/page": [
       "static/chunks/webpack-6e09c1f30d0a9600.js",
       "static/chunks/fd9d1056-5eb103dce6d79682.js",
       "static/chunks/69-923e5a5b15a1b460.js",
       "static/chunks/main-app-7162a0ba2114a8ba.js",
       "static/chunks/123-744f190aacf8cedf.js",
-      "static/chunks/app/result/[id]/page-335c9b9abf0d86cb.js"
+      "static/chunks/app/result/[type]/page-299de09fe0f7d5a0.js"
+    ],
+    "/result/[type]/layout": [
+      "static/chunks/webpack-6e09c1f30d0a9600.js",
+      "static/chunks/fd9d1056-5eb103dce6d79682.js",
+      "static/chunks/69-923e5a5b15a1b460.js",
+      "static/chunks/main-app-7162a0ba2114a8ba.js",
+      "static/chunks/app/result/[type]/layout-6f681e270a627108.js"
     ],
     "/survey/page": [
       "static/chunks/webpack-6e09c1f30d0a9600.js",
@@ -47,14 +47,14 @@
       "static/chunks/main-app-7162a0ba2114a8ba.js",
       "static/chunks/123-744f190aacf8cedf.js",
       "static/chunks/377-41b12d4dda16e852.js",
-      "static/chunks/app/survey/page-11d08a46f5d7e642.js"
+      "static/chunks/app/survey/page-8c13418a3f76ecbc.js"
     ],
     "/survey/layout": [
       "static/chunks/webpack-6e09c1f30d0a9600.js",
       "static/chunks/fd9d1056-5eb103dce6d79682.js",
       "static/chunks/69-923e5a5b15a1b460.js",
       "static/chunks/main-app-7162a0ba2114a8ba.js",
-      "static/chunks/app/survey/layout-66e36a92fa68e179.js"
+      "static/chunks/app/survey/layout-4d47b27b9d5b5223.js"
     ]
   }
 }
