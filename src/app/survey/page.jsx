@@ -307,9 +307,11 @@ export default function SurveyPage() {
     setIsSubmitting(true);
     
     try {
-      // 状态更新延迟
-      await new Promise(resolve => setTimeout(resolve, 100));
-      
+      // 确保只在客户端执行
+      if (typeof window === 'undefined') {
+        throw new Error('Client-side only function called on server');
+      }
+
       // MBTI计算逻辑
       const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
       
@@ -332,31 +334,46 @@ export default function SurveyPage() {
                          'ISTJ', 'ISFJ', 'ESTJ', 'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP'];
       
       if (validTypes.includes(mbtiType)) {
-        // 保存到localStorage（可选）
-        const resultData = {
-          mbtiType,
-          scores,
-          answers: finalAnswers,
-          completedAt: new Date().toISOString(),
-          language: 'zh'
-        };
-        
-        localStorage.setItem(`mbti-result-${mbtiType}`, JSON.stringify(resultData));
+        // 安全地保存到localStorage
+        try {
+          const resultData = {
+            mbtiType,
+            scores,
+            answers: finalAnswers,
+            completedAt: new Date().toISOString(),
+            language: 'zh'
+          };
+          
+          localStorage.setItem(`mbti-result-${mbtiType}`, JSON.stringify(resultData));
+          console.log('Result data saved to localStorage');
+        } catch (storageError) {
+          console.warn('Failed to save to localStorage:', storageError);
+          // 即使localStorage失败也继续
+        }
         
         console.log('About to redirect to:', `/result/${mbtiType.toLowerCase()}`);
         
-        // 导航延迟
-        await new Promise(resolve => setTimeout(resolve, 200));
+        // 更稳定的导航延迟
+        await new Promise(resolve => setTimeout(resolve, 300));
         
-        // 使用replace避免返回问题
-        router.replace(`/result/${mbtiType.toLowerCase()}`);
+        // 使用window.location进行更可靠的重定向
+        window.location.href = `/result/${mbtiType.toLowerCase()}`;
+        
       } else {
         throw new Error(`Invalid MBTI type calculated: ${mbtiType}`);
       }
+      
     } catch (error) {
       console.error('Error calculating results:', error);
       alert('结果计算出错，请重试。');
       setIsSubmitting(false);
+      
+      // 出错时重定向到首页
+      if (typeof window !== 'undefined') {
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 2000);
+      }
     }
   };
 
