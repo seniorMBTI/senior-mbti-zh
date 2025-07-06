@@ -52,7 +52,7 @@ export async function generateMetadata({ params }) {
       description: `${resultId} 性格类型详细分析结果。了解与您相配和需要磨合的MBTI类型，建立有意义的关系。`,
       type: 'website',
       locale: 'zh_CN',
-      url: `https://senior-mbti-k71r0f94e-seniormbtis-projects.vercel.app/result/${resultId}`,
+      url: `https://cn.seniormbti.com/result/${resultId}`,
       siteName: '银发族MBTI',
       images: [
         {
@@ -115,7 +115,7 @@ export default function ResultLayout({ children, params }) {
             "provider": {
               "@type": "Organization",
               "name": "银发族MBTI专业研究团队",
-              "url": "https://senior-mbti-k71r0f94e-seniormbtis-projects.vercel.app"
+              "url": "https://cn.seniormbti.com"
             },
             "datePublished": new Date().toISOString(),
             "inLanguage": "zh-CN",
@@ -136,19 +136,19 @@ export default function ResultLayout({ children, params }) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "银发族MBTI首页",
-                "item": "https://senior-mbti-k71r0f94e-seniormbtis-projects.vercel.app"
+                "item": "https://cn.seniormbti.com"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "性格测试问卷调查",
-                "item": "https://senior-mbti-k71r0f94e-seniormbtis-projects.vercel.app/survey"
+                "item": "https://cn.seniormbti.com/survey"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": `${resultId} 类型结果`,
-                "item": `https://senior-mbti-k71r0f94e-seniormbtis-projects.vercel.app/result/${resultId.toLowerCase()}`
+                "item": `https://cn.seniormbti.com/result/${resultId.toLowerCase()}`
               }
             ]
           })
