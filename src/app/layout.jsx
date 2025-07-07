@@ -28,7 +28,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: '银发族MBTI - 中老年性格测试',
     description: '专为银发族设计的MBTI测试。50岁、60岁、70岁以上人群的性格分析与相性诊断。',
-,
     creator: '@seniormbticn'
   },
   alternates: {
