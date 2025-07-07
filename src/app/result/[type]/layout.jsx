@@ -54,20 +54,11 @@ export async function generateMetadata({ params }) {
       locale: 'zh_CN',
       url: `https://cn.seniormbti.com/result/${resultId}`,
       siteName: '银发族MBTI',
-      images: [
-        {
-          url: `https://cn.seniormbti.com/${resultId}-cn.png`,
-          width: 1200,
-          height: 630,
-          alt: `${resultId} 性格类型结果 - 银发族MBTI`
-        }
-      ]
     },
     twitter: {
       card: 'summary_large_image',
       title: `银发族MBTI结果 - ${resultId} 类型`,
       description: `${resultId} 性格类型详细分析结果。了解与您相配和需要磨合的MBTI类型，建立有意义的关系。`,
-      images: [`https://cn.seniormbti.com/${resultId}-cn.png`]
     },
     robots: {
       index: true,
